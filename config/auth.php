@@ -36,6 +36,36 @@ return [
     */
 
     'guards' => [
+        'donor' => [
+            'driver' => 'session',
+            'provider' => 'donors',
+        ],
+
+        'hostaff' => [
+            'driver' => 'session',
+            'provider' => 'hostaffs',
+        ],
+
+        'costaff' => [
+            'driver' => 'session',
+            'provider' => 'costaffs',
+        ],
+
+        'mestaff' => [
+            'driver' => 'session',
+            'provider' => 'mestaffs',
+        ],
+
+        'me_staff' => [
+            'driver' => 'session',
+            'provider' => 'me_staffs',
+        ],
+
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
@@ -65,6 +95,36 @@ return [
     */
 
     'providers' => [
+        'donors' => [
+            'driver' => 'eloquent',
+            'model' => App\Donor::class,
+        ],
+
+        'hostaffs' => [
+            'driver' => 'eloquent',
+            'model' => App\Hostaff::class,
+        ],
+
+        'costaffs' => [
+            'driver' => 'eloquent',
+            'model' => App\Costaff::class,
+        ],
+
+        'mestaffs' => [
+            'driver' => 'eloquent',
+            'model' => App\Mestaff::class,
+        ],
+
+        'me_staffs' => [
+            'driver' => 'eloquent',
+            'model' => App\MeStaff::class,
+        ],
+
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Admin::class,
+        ],
+
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
@@ -92,6 +152,42 @@ return [
     */
 
     'passwords' => [
+        'donors' => [
+            'provider' => 'donors',
+            'table' => 'donor_password_resets',
+            'expire' => 60,
+        ],
+
+        'hostaffs' => [
+            'provider' => 'hostaffs',
+            'table' => 'hostaff_password_resets',
+            'expire' => 60,
+        ],
+
+        'costaffs' => [
+            'provider' => 'costaffs',
+            'table' => 'costaff_password_resets',
+            'expire' => 60,
+        ],
+
+        'mestaffs' => [
+            'provider' => 'mestaffs',
+            'table' => 'mestaff_password_resets',
+            'expire' => 60,
+        ],
+
+        'me_staffs' => [
+            'provider' => 'me_staffs',
+            'table' => 'me_staff_password_resets',
+            'expire' => 60,
+        ],
+
+        'admins' => [
+            'provider' => 'admins',
+            'table' => 'admin_password_resets',
+            'expire' => 60,
+        ],
+
         'users' => [
             'provider' => 'users',
             'table' => 'password_resets',
